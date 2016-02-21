@@ -1,0 +1,46 @@
+body {
+	margin:0;
+}
+#container {
+	position: relative;
+	background: #05ff44;
+
+  height: 100vh;
+  margin: 0;
+}
+
+
+
+
+#colorCode {
+	
+	opacity:0;
+	z-index: 1;
+}
+
+	#time:hover ~ #colorCode{
+		opacity:1;
+	}
+
+
+#time{
+	z-index: 2;
+
+}
+
+	#time:hover {
+		opacity: 0;
+	}
+
+
+.position{
+    position: absolute;
+    font-size: 100px;
+    height: 20%;
+    top: 10%;
+    left: 40%;
+    bottom: 0;
+    padding:0;
+    margin: auto;
+
+}
