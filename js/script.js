@@ -1,35 +1,48 @@
+var selector = function (sel){
+	return document.querySelector(sel)
+}
+
 var colorCode = document.querySelector('#colorCode')
 var timeCode = document.querySelector('#time')
 var backColor = document.querySelector('#container')
-
+var newBar = selector('#theBar')
 var dateObj = new Date()
-var digits = dateObj.toTimeString()
-
-timeSplit = digits.split(' ')
-realTime= timeSplit[0]
-timeCode.innerHTML = realTime
-
-backColorNumber = backColor.style.background 
-console.log(backColor.style.background)
+var overlay = selector('#overlay')
 
 
-// var colorShowing = false
-// var change = function (){
+//Time
+
+function myTimer() {
+    var d = new Date();
+    var t = d.toLocaleTimeString();
+    timeSplit = t.split(' ')
+	realTime= timeSplit[0]
+	timeCode.innerHTML = realTime
+}
+var myVar = setInterval(myTimer, 1000);
+
+//Color
+
+overlay.style.background
 
 
-// 	if (colorShowing=== false){
-// 		colorCode.style.display = 'inline-block';
-// 		timeCode.style.display = 'none'
-// 		colorShowing = true
-// 	}
-// 	else {colorCode.style.display = 'none';
-// 		  timeCode.style.display = 'inline-block'
-// 		  colorShowing = false
-// 	}	
 
-// }
+var getRandomColor = function () {
+    var letters = '0123456789ABCDEF'.split('');
+    var color = '#';
+    for (var i = 0; i < 6; i++ ) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    overlay.style.background=color
+    colorCode.innerHTML = overlay.style.background
+    return overlay.style.background
+}
 
-// timeCode.addEventListener('mouseover',change)
-// colorCode.addEventListener('mouseout',change)
+setInterval(getRandomColor,1000)
+
+//Bar
+
+
+
 
 

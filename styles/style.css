@@ -3,19 +3,40 @@ body {
 }
 #container {
 	position: relative;
-	background: #05ff44;
-
-  height: 100vh;
-  margin: 0;
+	background:radial-gradient(circle, white, rgba(64,14,173,1));
+	opacity: .8;
+  	height: 100vh;
+  	margin: 0;
 }
 
 
-
+#overlay{
+	width: 100%;
+	height: 100vh;
+	position: absolute;
+	top:0;
+	left: 0;
+	margin: auto;
+	background: #02ed21;
+}
 
 #colorCode {
 	
 	opacity:0;
 	z-index: 1;
+}
+
+#theBar{
+	position: absolute;
+    height: 20px;
+    width: 10px;
+    background: black;
+    top: 10%;
+    left: 46%;
+    bottom: 0;
+    padding: 0;
+    margin: auto;
+    transform: translateX(-50%);
 }
 
 	#time:hover ~ #colorCode{
@@ -37,8 +58,8 @@ body {
     position: absolute;
     font-size: 100px;
     height: 20%;
-    top: 10%;
-    left: 40%;
+    top: 0%;
+    left: 35%;
     bottom: 0;
     padding:0;
     margin: auto;
